@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Community</title>
+    <link rel="stylesheet" href="./assets/css/comm.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Agriculture Community</h1>
+        </div>
+    </header>
+    <section id="schemes" class="content-section">
+        <div class="container">
+            <h2>Government Schemes</h2>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="/transitive/images/bg.jpg" alt="Scheme 1">
+                    <img src="/transitive/images/login-bg1.jpg" alt="Scheme 2">
+                    <img src="/transitive/images/crop.jpg" alt="Scheme 3">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="home">
+        <div class="hero">
+            <h2>Welcome to Our Agriculture Community</h2>
+            <p>Connecting farmers with resources and knowledge.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+    <section id="about" class="content-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a community dedicated to helping farmers improve their practices through sharing knowledge and resources.</p>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for your message!');
+});
+
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-images img');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    const carouselImages = document.querySelector('.carousel-images');
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+    const offset = -currentSlide * 100 + '%';
+    carouselImages.style.transform = `translateX(${offset})`;
+}
+
+setInterval(() => {
+    showSlide(currentSlide + 1);
+}, 5000);
+
+    </script>
+</body>
+</html>
