@@ -110,7 +110,7 @@ form.addEventListener('submit', async function (e) {
         const result = await response.json();
         if (result.success) {
             alert('Registration successful!');
-            window.location.href = '../index.html';
+            window.location.href = '../dashboard.html';
             
         } else {
             alert('Registration failed: ' + result.message);
@@ -199,7 +199,7 @@ lgForm.addEventListener('submit', async function (e){
         const result = await response.json();
         if (result.success) {
             alert('Login successful!');
-            window.location.href = '../index.html';
+            window.location.href = '../dashboard.html';
         } else {
             alert('Login failed: ' + result.message);
         }

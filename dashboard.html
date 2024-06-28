@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/Farm_Fresh-removebg-preview.png" alt="Krishi-Tech Logo" style="width: 70%;">
+                <h1>Krishi-Tech</h1>
+                <p>One Stop Destination for Farmers</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <l><img src='images/ramesh.jpg' style="width: 100%;"></l>
+                    <li><a href="#">Ramesh Rawat</a></li>
+                    <li><a href="#">Langasu, Uttrakhand</a></li>
+                    <li><a href="#">Current Crop: Jackfruit</a></li>
+                    <li><a href="#">Explore Services</a></li>
+                    <!-- <li><a href="#">News</a></li> -->
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section class="market-section">
+                <h2 style="font-size: 4rem;">Visualizations</h2>
+                <p>Manage your profits and growths... </p>
+                <div class="stocks">
+                    <div class="stock-card">
+                        <div class="stock-info">
+                            <h3>Profits</h3>
+                            <p>Gains after selling crops</p>
+                        </div>
+                        <div class="stock-growth">
+                            <span>+10%</span>
+                            <canvas id="chart1"></canvas>
+                        </div>
+                    </div>
+                    <div class="stock-card">
+                        <div class="stock-info">
+                            <h3>Yield</h3>
+                            <p>Trends in the yield of the produce</p>
+                        </div>
+                        <div class="stock-growth">
+                            <span>+50%</span>
+                            <canvas id="chart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="goods-section">
+                <h3 style="font-size: 4rem;">Goods</h3>
+                <div class="goods-icons">
+                    <span>Pesticides</span>
+                    <span>Fertilizers</span>
+                    <span>Machineries</span>
+                    <span>Grains</span>
+                    <span>Livestock</span>
+                    <span>Cotton</span>
+                    <!-- <span>Corn</span> -->
+                    <span>Oil</span>
+                </div>
+            </section>
+            <section class="gainers-section">
+                <h3 style="font-size: 4rem; align-items: center;">Recommended blogs</h3>
+                <span><h2 style="align-items: center;">Sustainable Farming Practices for a Better Future</h2></span>
+                <div class="gainer">
+                    
+                    <div class="blog">
+                        <p>As the global population continues to grow, the demand for food increases, putting immense pressure on our
+                            agricultural systems. Sustainable farming practices offer a solution to meet this demand while preserving
+                            our natural resources and ensuring food security for future generations. In this blog, we will explore
+                            various sustainable farming techniques that can be adopted by farmers to enhance productivity and protect
+                            the environment.</p>
+                        <p><strong>Crop Rotation and Diversification</strong><br>Crop rotation involves growing different types of crops
+                            in the same area in sequential seasons. This practice helps maintain soil fertility, reduces soil erosion,
+                            and minimizes the buildup of pests and diseases. By diversifying the types of crops grown, farmers can
+                            improve soil health and increase biodiversity on their farms.</p>
+                        <p><strong>Conservation Tillage</strong><br>Conservation tillage is a method of soil cultivation that reduces
+                            soil erosion and water loss. By leaving crop residues on the field and minimizing soil disturbance, farmers
+                            can improve soil structure, enhance water infiltration, and reduce the need for chemical fertilizers and
+                            pesticides.</p>
+                        <p><strong>Integrated Pest Management (IPM)</strong><br>IPM is an environmentally friendly approach to pest
+                            control that combines biological, cultural, physical, and chemical methods. By monitoring pest populations
+                            and using targeted interventions, farmers can reduce the reliance on chemical pesticides, lower production
+                            costs, and minimize the impact on non-target organisms and the environment.</p>
+                        <p><strong>Agroforestry</strong><br>Agroforestry involves integrating trees and shrubs into agricultural
+                            landscapes. This practice provides multiple benefits, including improved soil fertility, enhanced
+                            biodiversity, and increased carbon sequestration. Agroforestry systems can also offer additional sources of
+                            income through the production of fruits, nuts, and timber.</p>
+                        <p><strong>Organic Farming</strong><br>Organic farming emphasizes the use of natural inputs and processes to
+                            enhance soil health and crop productivity. By avoiding synthetic fertilizers and pesticides, organic farmers
+                            promote ecological balance and biodiversity. Organic farming practices, such as composting and green
+                            manuring, help improve soil structure and fertility.</p>
+                        <p><strong>Water Management</strong><br>Efficient water management is crucial for sustainable farming,
+                            especially in regions facing water scarcity. Techniques such as drip irrigation, rainwater harvesting, and
+                            the use of drought-resistant crop varieties can help farmers optimize water use and reduce the impact of
+                            water shortages on crop yields.</p>
+                        <p>Adopting sustainable farming practices is essential for ensuring the long-term viability of our agricultural
+                            systems. By implementing techniques such as crop rotation, conservation tillage, IPM, agroforestry, organic
+                            farming, and efficient water management, farmers can enhance productivity, protect natural resources, and
+                            contribute to a more sustainable future for all.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="popular-section">
+                <h3 style="font-size: 4rem;">Recommended Products</h3>
+                <div class="popular">
+                    <div class="seeds">
+                        <section class="blog">
+                            <section class="box">
+                                <div class="content" id="about">
+                                    <header class="align-center">
+                                    </header>
+                                    <hr>
+                                    <div class="carousel">
+                                        <div class="carousel-track-container">
+                                            <ul class="carousel-track">
+                                                <li class="carousel-slide current-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/seeds.jpg" class="product" alt="" width="3472"
+                                                                height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>Rice Seeds</h2>
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best rice seeds</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="carousel-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/kidney-beans.jpg" class="product" alt="" width="3472"
+                                                                height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>KIDNEY BEANS</h2>
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best kidneybeans seeds</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="carousel-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/fertilizer (2).jpg" class="product" alt="" width="3472"
+                                                                height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>FERTILIZER</h2>
+                
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best fertilizer</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="carousel-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/wheat.jpg" class="product" alt="" width="3472"
+                                                                height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>WHEAT SEEDS</h2>
+                
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best wheat seeds</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="carousel-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/jute" class="product" alt="" width="3472" height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>JUTE SEEDS</h2>
+                
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best jute seeds</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="carousel-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/coffee.jpg" class="product" alt="" width="3472"
+                                                                height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>COFFEE BEANS</h2>
+                
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best coffee seeds</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="carousel-slide">
+                                                    <div class="box">
+                                                        <div class="image fit">
+                                                            <img src="images/maize.jpg" class="product" alt="" width="3472"
+                                                                height="1236">
+                                                        </div>
+                                                        <div class="content">
+                                                            <header class="align-center">
+                                                                <h2>MAIZE SEEDS</h2>
+                
+                                                            </header>
+                                                            <hr>
+                                                            <p>Best maize seeds</p>
+                                                            <p>Rs 99/kg</p>
+                                                            <ul class="actions">
+                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
+                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="carousel-button left"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <button class="carousel-button right"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
