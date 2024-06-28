@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/crop-pred.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <title>Fertilizer Prediction</title>
+</head>
+<body style="background-image: url('../images/fertilizer.jpg'); background-size: cover; background-position: center;">
+    <div id="popup-container" class="popup-container">
+        <div class="popup">
+            <a href="#" class="location"><i class="fa-solid fa-location-dot"></i></i></a>
+            <h2>Request Location</h2>
+            <p>Please allow us to use your device location.</p>
+            <div class="btn">
+                <button class="button special scrolly" id="allow-button">Allow</button>
+                <button class="button special scrolly" id="deny-button">Deny</button>
+            </div>
+        </div>
+    </div> 
+    <div id="weather-soil-data" class="soil-data" style="visibility: hidden; margin-top: -1%;">
+        <p id="temperature">Temperature: </p>
+        <p id="humidity">Humidity: </p>
+        <p id="moisture">Rainfall: </p>
+        <label for="soil_type" style="color: aliceblue;">Soil Type: </label>
+        <select id="soil_type" style="background-color: black;">
+            <option value="Sandy">Sandy</option>
+            <option value="Loamy">Loamy</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="Clayey">Clayey</option>
+        </select>
+        <label for="crop_type" style="color: aliceblue;">Crop Type: </label>
+        <select id="crop_type" style="background-color: black;">
+            <option value="Maize">Maize</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Tobacco">Tobacco</option>
+            <option value="Paddy">Paddy</option>
+            <option value="Barley">Barley</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Millets">Millets</option>
+            <option value="Oil seeds">Oil seeds</option>
+            <option value="Pulses">Pulses</option>
+            <option value="Ground Nuts">Ground Nuts</option>
+        </select>
+        <p id="nitrogen">Nitrogen: </p>
+        <p id="potassium">Potassium: </p>
+        <p id="phosphorus">Phosphorus: </p>
+        <p id="fertilizer">Predicted Fertilizer: </p>
+        <button id="predict-button">Predict</button>
+    </div>
+    <script src="../static/fertilizer.js"></script>
+</body>
+</html>

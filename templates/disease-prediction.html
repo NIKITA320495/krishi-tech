@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/disease.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <title>Disease Prediction</title>
+    <style>
+        .prediction-result {
+            color: white;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        .image-preview {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="disease-container">
+        <div class="content">
+            <h1>Disease Prediction</h1>
+                <div class="input">
+                    <label for="image">Upload Image</label>
+                    <input type="file" name="image" id="image" accept="image/*" required>
+                </div>
+                <button id="predict-button" type="button" class="button special scrolly">Predict</button>
+                <div id="prediction-result" class="prediction-result"></div>
+            <br>
+            <img id="image-preview" class="image-preview" src="" alt="Image Preview">
+            
+        </div>
+    </div>
+    <script>
+        document.getElementById('image').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('image-preview');
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+            }
+        });
+
+        document.getElementById('predict-button').addEventListener('click', function() {
+            const fileInput = document.getElementById('image');
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('prediction-result');
+                if (data.error) {
+                    resultDiv.textContent = `Error: ${data.error}`;
+                } else {
+                    resultDiv.textContent = `Predicted Class: ${data.predicted_class}`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
