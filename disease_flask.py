@@ -44,7 +44,7 @@ def predict():
 
         model = load_model()
 
-        Categories=['Black spot','canker','greening','healthy','Melanose']
+        Categories=['Black spot','canker','greening','healthy','Melanose','Anthracnose','Blight','Grey mold','crown gal','Botrytis']
         img_resized = resize(img, (150, 150, 3))  # Adjust the size as per your model training
         img_flattened = img_resized.flatten()[np.newaxis, :]
 
