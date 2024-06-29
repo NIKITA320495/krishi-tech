@@ -47,8 +47,8 @@ def predict():
         k = 30  # example value
 
         api_key = 'c22109f9a9c43b3bf6aed69688189ec6'
-        temperature, humidity, rainfall = get_weather_data(latitude, longitude, api_key)
-
+        temperature, humidity = get_weather_data(latitude, longitude, api_key)
+        rainfall=148
         predicted_fertilizer = predict_fertilizer(temperature, humidity, rainfall, soil_type, crop_type, n, k, p)
 
         response_data = {
@@ -77,9 +77,8 @@ def get_weather_data(lat, long, api_key):
         
         temperature = data['main'].get('temp', 0.0)
         humidity = data['main'].get('humidity', 0.0)
-        rainfall = data.get('rain', {}).get('1h', 0.0)
         
-        return float(temperature), float(humidity), float(rainfall)
+        return float(temperature), float(humidity)
     
     except requests.exceptions.RequestException as err:
         print(f"Request error occurred: {err}")

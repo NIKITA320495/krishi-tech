@@ -66,7 +66,8 @@ def predict():
         k = 30  # example value
         ph_value=5
         api_key = 'c22109f9a9c43b3bf6aed69688189ec6'
-        temperature, humidity, rainfall = get_weather_data(latitude, longitude, api_key)
+        temperature, humidity = get_weather_data(latitude, longitude, api_key)
+        rainfall=148
         crop_label = predict_crop(n, p, k, temperature, humidity, ph_value, rainfall)
 
         response_data = {
@@ -101,9 +102,8 @@ def get_weather_data(lat, long, api_key):
         # Convert temperature, humidity, and rainfall to float if they are numeric
         temperature = float(temperature) if isinstance(temperature, (int, float)) else 0.0
         humidity = float(humidity) if isinstance(humidity, (int, float)) else 0.0
-        rainfall = float(rainfall) if isinstance(rainfall, (int, float)) else 0.0
         
-        return temperature, humidity, rainfall
+        return temperature, humidity
     
     except requests.exceptions.RequestException as err:
         print(f"Request error occurred: {err}")
