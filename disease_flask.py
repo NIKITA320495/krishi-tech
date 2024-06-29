@@ -58,4 +58,4 @@ def predict():
         return jsonify({'predicted_class': predicted_class})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5002)
