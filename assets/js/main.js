@@ -199,3 +199,30 @@ document.addEventListener('DOMContentLoaded', function() {
 	}, 5000);
 });
 
+function createPost() {
+    const postContent = document.getElementById('post-content').value;
+
+    if (postContent.trim() === "") {
+        alert("Please write something in the text box.");
+        return;
+    }
+
+    const postsContainer = document.getElementById('posts');
+    const newPost = document.createElement('div');
+    newPost.classList.add('post');
+    
+    const postAuthor = document.createElement('p');
+    postAuthor.innerHTML = `<strong>You</strong>`;
+    
+    const postText = document.createElement('p');
+    postText.textContent = postContent;
+
+    newPost.appendChild(postAuthor);
+    newPost.appendChild(postText);
+
+    postsContainer.insertBefore(newPost, postsContainer.firstChild);
+
+    // Clear the text area
+    document.getElementById('post-content').value = "";
+}
+////////////////////////////////////////
