@@ -1,0 +1,82 @@
+.sidebar {
+    width: 250px;
+    background-color: #f5f6fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+#product-form input[type="radio"] {
+    margin-right: 5px;
+}
+#product-form {
+    display: flex;
+    flex-direction: column;
+}
+.container-box {
+            display: flex;
+            min-height: 100vh; /* Ensure it takes full viewport height */
+        }
+        /* Ensure that sidebar and main content use flex layout */
+        .sidebar {
+            width: 250px;
+            background-color: #f5f6fa;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .card-description {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .card-button:hover {
+            background-color: #0056b3;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .container-box > .visible {
+            display: block; /* Only show the container with class 'visible' */
+        }

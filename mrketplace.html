@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <style>
+        /* Ensure containers are hidden initially */
+        .container-box > div {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="alt">
+		<div class="logo">
+			<img src="images/Farm_Fresh-removebg-preview.png" alt="Krishi-Tech" width="100" height="100">
+		</div>
+		<a href="#menu" class="toggle"><span>Menu</span></a>
+	</header><!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#products">Products</a></li>
+			<li><a href="#community">Community</a></li>
+			<li><a href='gov.html'>Government Schemes</a></li>
+			<li><a href="./templates/login.html">Sign In</a></li>
+		</ul>
+	</nav>
+    <section id="banner">
+        <video autoplay muted loop id="background-video">
+            <source src="images/85898-591840759_small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="inner">
+            <h1>Krishi-Tech Marketplace</h1>
+            <p>One Stop Destination for Farmers</p>
+            <a href="./templates/login.html" class="button special scrolly">Buy</a>
+            <a href="./templates/login.html" class="button special scrolly">Sell</a>
+        </div>
+    </section><!-- One -->
+    <div class="container-box">
+        <aside class="sidebar">
+            <nav class="nav">
+                <h2>PRODUCTS</h2>
+                <form id="product-form">
+                    <label for="product">Select a Product:</label>
+                    <select id="product" name="product">
+                        <option value="grain" selected>Grains</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                    </select>
+                    <br>
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="grain" selected>rice</option>
+                        <option value="vegetables">Maize</option>
+                        <option value="fruits">wheat</option>
+                    </select>
+                    <br>
+                    <label for="price">Price (Rs)</label>
+                    <input type="number" id="price" name="price">
+                    <br>
+                    <label for="quantity">Quantity (kg) </label>
+                    <input type="number" id="quantity" name="quantity">
+                    <label for="location">Location</label>
+                    <select id="product" name="product">
+                        <option value="hp" selected>Himachal Pradesh</option>
+                        <option value="hr">Haryana</option>
+                        <option value="mp">Madhya Pradesh</option>
+                    </select>
+                </form>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1 class="align-center">Products</h1>
+            <div id="grain-container">
+                <h1>Grains</h1>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="images/seeds.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                            <a href="#" class="button special scrolly">Buy</a>
+                            <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/carrot.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="vegetable-container">
+                <h1>Vegetables</h1>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="images/bg.jpg" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fruit-container">
+                <h1>Fruits</h1>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300" alt="Card Image">
+                        <div class="card-content">
+                            <h2 class="card-title">Card Title</h2>
+                            <p class="card-description">This is a brief description of the card. It provides some
+                                information about the content of the card.</p>
+                                <a href="#" class="button special scrolly">Buy</a>
+                                <a href="#" class="button special scrolly">Sell</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('product').addEventListener('change', function () {
+            var selectedValue = this.value;
+
+            document.getElementById('grain-container').style.display = 'none';
+            document.getElementById('vegetable-container').style.display = 'none';
+            document.getElementById('fruit-container').style.display = 'none';
+
+            if (selectedValue === 'grain') {
+                document.getElementById('grain-container').style.display = 'block';
+            } else if (selectedValue === 'vegetables') {
+                document.getElementById('vegetable-container').style.display = 'block';
+            } else if (selectedValue === 'fruits') {
+                document.getElementById('fruit-container').style.display = 'block';
+            }
+        });
+
+        // Initialize the display state
+        document.getElementById('product').dispatchEvent(new Event('change'));
+        const categories = {
+            grain: ["Rice", "Maize", "Wheat"],
+            vegetables: ["Carrot", "Potato", "Onion"],
+            fruits: ["Apple", "Banana", "Mango"]
+        };
+
+        // Get references to the select elements
+        const productSelect = document.getElementById('product');
+        const categorySelect = document.getElementById('category');
+
+        // Function to update category options based on selected product
+        function updateCategories() {
+            const selectedProduct = productSelect.value;
+            const options = categories[selectedProduct] || [];
+
+            // Clear existing options
+            categorySelect.innerHTML = '';
+
+            // Populate new options
+            options.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.toLowerCase();
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
+        }
+
+        // Set initial categories based on the default product selection
+        updateCategories();
+
+        // Add event listener to update categories when the product selection changes
+        productSelect.addEventListener('change', updateCategories);
+    </script>
+</body>
+
+</html>

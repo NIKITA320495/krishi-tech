@@ -116,3 +116,267 @@ document.addEventListener('DOMContentLoaded', function() {
 		updateButtons(slides, prevButton, nextButton, autoSlideIndex);
 	}, 5000);
 });
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
+	} else {
+		alert("Geolocation is not supported by this browser.");
+	}
+}
+
+function showPosition(position) {
+	const latitude = position.coords.latitude;
+	const longitude = position.coords.longitude;
+	getCityState(latitude, longitude);
+}
+
+function getCityState(lat, lon) {
+	var requestOptions = {
+		method: 'GET',
+	};
+
+	fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=166e6d085f744211a848c9201247c471`, requestOptions)
+		.then(response => response.json())
+		.then(result => {
+			if (result.features && result.features.length > 0) {
+				const address = result.features[0].properties;
+				const city = address.city || address.town || address.village;
+				const state = address.state;
+				updateLocation( state);
+			} else {
+				console.log('No results found');
+			}
+		})
+		.catch(error => console.log('Error:', error));
+}
+
+function updateLocation(city, state) {
+	document.getElementById('location').innerHTML = `${city}`;
+}
+
+function showError(error) {
+	switch(error.code) {
+		case error.PERMISSION_DENIED:
+			alert("User denied the request for Geolocation.");
+			break;
+		case error.POSITION_UNAVAILABLE:
+			alert("Location information is unavailable.");
+			break;
+		case error.TIMEOUT:
+			alert("The request to get user location timed out.");
+			break;
+		case error.UNKNOWN_ERROR:
+			alert("An unknown error occurred.");
+			break;
+	}
+}
+
+// Call getLocation to start the process
+getLocation();
+document.addEventListener('DOMContentLoaded', function () {
+    const weatherApiKey = 'c22109f9a9c43b3bf6aed69688189ec6';
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(fetchWeatherData, showError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function fetchWeatherData(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${weatherApiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const weeklyData = processWeeklyWeatherData(data);
+                displayWeeklyWeatherChart(weeklyData);
+            })
+            .catch(error => console.error('Error fetching weather data:', error));
+    }
+
+    function processWeeklyWeatherData(data) {
+        const dailyData = {};
+
+        data.list.forEach(entry => {
+            const date = new Date(entry.dt * 1000);
+            const day = date.toLocaleDateString('en-US', { weekday: 'long' });
+            
+            if (!dailyData[day]) {
+                dailyData[day] = {
+                    temperatureSum: 0,
+                    temperatureCount: 0,
+                    humiditySum: 0,
+                    windSpeedSum: 0,
+                    windSpeedCount: 0,
+                    entries: 0
+                };
+            }
+
+            dailyData[day].temperatureSum += entry.main.temp;
+            dailyData[day].temperatureCount++;
+            dailyData[day].humiditySum += entry.main.humidity;
+            dailyData[day].windSpeedSum += entry.wind.speed;
+            dailyData[day].windSpeedCount++;
+            dailyData[day].entries++;
+        });
+
+        return Object.keys(dailyData).map(day => ({
+            day: day,
+            avgTemp: (dailyData[day].temperatureSum / dailyData[day].temperatureCount).toFixed(2),
+            avgHumidity: (dailyData[day].humiditySum / dailyData[day].entries).toFixed(2),
+            avgWindSpeed: (dailyData[day].windSpeedSum / dailyData[day].windSpeedCount).toFixed(2)
+        }));
+    }
+
+    function displayWeeklyWeatherChart(weeklyData) {
+        const ctx = document.getElementById('weeklyWeatherChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: weeklyData.map(data => data.day),
+                datasets: [
+                    {
+                        label: 'Avg Temperature (°C)',
+                        data: weeklyData.map(data => data.avgTemp),
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        fill: false,
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Avg Humidity (%)',
+                        data: weeklyData.map(data => data.avgHumidity),
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        fill: false,
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Avg Wind Speed (m/s)',
+                        data: weeklyData.map(data => data.avgWindSpeed),
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        fill: false,
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred.");
+                break;
+        }
+    }
+
+    // Start the process
+    getLocation();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const weatherApiKey = 'c22109f9a9c43b3bf6aed69688189ec6';
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(fetchWeatherData, showError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function fetchWeatherData(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${weatherApiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const weatherData = processWeatherData(data);
+                displayWeatherChart(weatherData);
+            })
+            .catch(error => console.error('Error fetching weather data:', error));
+    }
+
+    function processWeatherData(data) {
+        return {
+            temperature: data.main.temp, // Current temperature in Celsius
+            humidity: data.main.humidity, // Humidity percentage
+            windSpeed: data.wind.speed // Wind speed in meters/sec
+        };
+    }
+
+    function displayWeatherChart(weatherData) {
+        const ctx = document.getElementById('weatherChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Temperature (°C)', 'Humidity (%)', 'Wind Speed (m/s)'],
+                datasets: [{
+                    label: 'Current Weather Data',
+                    data: [weatherData.temperature, weatherData.humidity, weatherData.windSpeed],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred.");
+                break;
+        }
+    }
+
+    // Start the process
+    getLocation();
+});
+

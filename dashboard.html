@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,11 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="container">
         <aside class="sidebar">
@@ -26,14 +24,15 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <l><img src='images/ramesh.jpg' style="width: 100%;"></l>
+                    <li><img src='images/ramesh.jpg' style="width: 100%;"></li>
                     <li><a href="#">Ramesh Rawat</a></li>
-                    <li><a href="#">Langasu, Uttrakhand</a></li>
+                    <li id="location"><a href="#"></a></li>
                     <li><a href="#">Current Crop: Jackfruit</a></li>
                     <li><a href="#">Explore Services</a></li>
                     <!-- <li><a href="#">News</a></li> -->
                     <li><a href="#">Account</a></li>
                 </ul>
+
             </nav>
         </aside>
         <main class="main-content">
@@ -62,6 +61,14 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <div>
+                    <canvas id="weeklyWeatherChart"></canvas>
+                </div>
+                <br>
+                <div>
+                    <canvas id="weatherChart"></canvas>
+                </div>
             </section>
             <section class="goods-section">
                 <h3 style="font-size: 4rem;">Goods</h3>
@@ -78,51 +85,21 @@
             </section>
             <section class="gainers-section">
                 <h3 style="font-size: 4rem; align-items: center;">Recommended blogs</h3>
-                <span><h2 style="align-items: center;">Sustainable Farming Practices for a Better Future</h2></span>
+                <span>
+                    <h2 style="align-items: center;">Sustainable Farming Practices according to your location</h2>
+                </span>
                 <div class="gainer">
-                    
+
                     <div class="blog">
-                        <p>As the global population continues to grow, the demand for food increases, putting immense pressure on our
-                            agricultural systems. Sustainable farming practices offer a solution to meet this demand while preserving
-                            our natural resources and ensuring food security for future generations. In this blog, we will explore
-                            various sustainable farming techniques that can be adopted by farmers to enhance productivity and protect
-                            the environment.</p>
-                        <p><strong>Crop Rotation and Diversification</strong><br>Crop rotation involves growing different types of crops
-                            in the same area in sequential seasons. This practice helps maintain soil fertility, reduces soil erosion,
-                            and minimizes the buildup of pests and diseases. By diversifying the types of crops grown, farmers can
-                            improve soil health and increase biodiversity on their farms.</p>
-                        <p><strong>Conservation Tillage</strong><br>Conservation tillage is a method of soil cultivation that reduces
-                            soil erosion and water loss. By leaving crop residues on the field and minimizing soil disturbance, farmers
-                            can improve soil structure, enhance water infiltration, and reduce the need for chemical fertilizers and
-                            pesticides.</p>
-                        <p><strong>Integrated Pest Management (IPM)</strong><br>IPM is an environmentally friendly approach to pest
-                            control that combines biological, cultural, physical, and chemical methods. By monitoring pest populations
-                            and using targeted interventions, farmers can reduce the reliance on chemical pesticides, lower production
-                            costs, and minimize the impact on non-target organisms and the environment.</p>
-                        <p><strong>Agroforestry</strong><br>Agroforestry involves integrating trees and shrubs into agricultural
-                            landscapes. This practice provides multiple benefits, including improved soil fertility, enhanced
-                            biodiversity, and increased carbon sequestration. Agroforestry systems can also offer additional sources of
-                            income through the production of fruits, nuts, and timber.</p>
-                        <p><strong>Organic Farming</strong><br>Organic farming emphasizes the use of natural inputs and processes to
-                            enhance soil health and crop productivity. By avoiding synthetic fertilizers and pesticides, organic farmers
-                            promote ecological balance and biodiversity. Organic farming practices, such as composting and green
-                            manuring, help improve soil structure and fertility.</p>
-                        <p><strong>Water Management</strong><br>Efficient water management is crucial for sustainable farming,
-                            especially in regions facing water scarcity. Techniques such as drip irrigation, rainwater harvesting, and
-                            the use of drought-resistant crop varieties can help farmers optimize water use and reduce the impact of
-                            water shortages on crop yields.</p>
-                        <p>Adopting sustainable farming practices is essential for ensuring the long-term viability of our agricultural
-                            systems. By implementing techniques such as crop rotation, conservation tillage, IPM, agroforestry, organic
-                            farming, and efficient water management, farmers can enhance productivity, protect natural resources, and
-                            contribute to a more sustainable future for all.</p>
+                        <p>blog</p>
                     </div>
                 </div>
             </section>
             <section class="popular-section">
                 <h3 style="font-size: 4rem;">Recommended Products</h3>
-                <div class="popular">
-                    <div class="seeds">
-                        <section class="blog">
+               
+                    <img class="seeds">
+                        <section class="blog1">
                             <section class="box">
                                 <div class="content" id="about">
                                     <header class="align-center">
@@ -134,8 +111,8 @@
                                                 <li class="carousel-slide current-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/seeds.jpg" class="product" alt="" width="3472"
-                                                                height="1236">
+                                                            <img src="images/seeds.jpg" class="product" alt=""
+                                                                width="3472" height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
@@ -145,9 +122,11 @@
                                                             <p>Best rice seeds</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -155,8 +134,8 @@
                                                 <li class="carousel-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/kidney-beans.jpg" class="product" alt="" width="3472"
-                                                                height="1236">
+                                                            <img src="images/kidney-beans.jpg" class="product" alt=""
+                                                                width="3472" height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
@@ -166,9 +145,11 @@
                                                             <p>Best kidneybeans seeds</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -176,21 +157,23 @@
                                                 <li class="carousel-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/fertilizer (2).jpg" class="product" alt="" width="3472"
-                                                                height="1236">
+                                                            <img src="images/fertilizer (2).jpg" class="product" alt=""
+                                                                width="3472" height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
                                                                 <h2>FERTILIZER</h2>
-                
+
                                                             </header>
                                                             <hr>
                                                             <p>Best fertilizer</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -198,21 +181,23 @@
                                                 <li class="carousel-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/wheat.jpg" class="product" alt="" width="3472"
-                                                                height="1236">
+                                                            <img src="images/wheat.jpg" class="product" alt=""
+                                                                width="3472" height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
                                                                 <h2>WHEAT SEEDS</h2>
-                
+
                                                             </header>
                                                             <hr>
                                                             <p>Best wheat seeds</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -220,20 +205,23 @@
                                                 <li class="carousel-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/jute" class="product" alt="" width="3472" height="1236">
+                                                            <img src="images/jute" class="product" alt="" width="3472"
+                                                                height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
                                                                 <h2>JUTE SEEDS</h2>
-                
+
                                                             </header>
                                                             <hr>
                                                             <p>Best jute seeds</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -241,21 +229,23 @@
                                                 <li class="carousel-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/coffee.jpg" class="product" alt="" width="3472"
-                                                                height="1236">
+                                                            <img src="images/coffee.jpg" class="product" alt=""
+                                                                width="3472" height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
                                                                 <h2>COFFEE BEANS</h2>
-                
+
                                                             </header>
                                                             <hr>
                                                             <p>Best coffee seeds</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -263,21 +253,23 @@
                                                 <li class="carousel-slide">
                                                     <div class="box">
                                                         <div class="image fit">
-                                                            <img src="images/maize.jpg" class="product" alt="" width="3472"
-                                                                height="1236">
+                                                            <img src="images/maize.jpg" class="product" alt=""
+                                                                width="3472" height="1236">
                                                         </div>
                                                         <div class="content">
                                                             <header class="align-center">
                                                                 <h2>MAIZE SEEDS</h2>
-                
+
                                                             </header>
                                                             <hr>
                                                             <p>Best maize seeds</p>
                                                             <p>Rs 99/kg</p>
                                                             <ul class="actions">
-                                                                <li><a href="read_more.html" class="button alt">Add to Cart</a></li>
-                                                                <li><a href="read_more.html" class="button alt">Buy Now</a></li>
-                
+                                                                <li><a href="read_more.html" class="button alt">Add to
+                                                                        Cart</a></li>
+                                                                <li><a href="read_more.html" class="button alt">Buy
+                                                                        Now</a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -285,19 +277,92 @@
                                             </ul>
                                         </div>
                                         <div class="carousel-buttons">
-                                            <button class="carousel-button left"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <button class="carousel-button right"><i class="fa-solid fa-chevron-right"></i></button>
+                                            <button class="carousel-button left"><i
+                                                    class="fa-solid fa-chevron-left"></i></button>
+                                            <button class="carousel-button right"><i
+                                                    class="fa-solid fa-chevron-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </section>
                         </section>
-                
+                        <h1 class="align-center"style="font-size: 3rem;">connect with experts</h1>
+                        <img style="width: 100%;"  src="https://www.agrirs.co.uk/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFJVRHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3a0d5eb12c6d822f149c5e66dcaef412a4b3ab35/iStock_1211406255.jpg">
                     </div>
                 </div>
             </section>
         </main>
     </div>
     <script src="dashboard.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // Function to fetch weather data from OpenWeatherMap API
+        async function getWeatherData(city) {
+            const apiKey = 'c22109f9a9c43b3bf6aed69688189ec6';
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            return data;
+        }
+
+        // Function to get an answer from Google Generative AI based on a prompt
+        async function getAnswer(location) {
+            const genAI = new GoogleGenerativeAI("AIzaSyBtd4jGDayYjdx0gGJYYwaFHFgdenCLQZg");
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+            // Fetch weather data for a specific city (e.g., "London")
+            const weatherData = await getWeatherData("London");
+            const weatherDescription = weatherData.weather[0].description;
+            const temperature = weatherData.main.temp;
+
+            // Create a prompt including weather information
+            const prompt = `Current weather in ${location} is ${weatherDescription} with a temperature of ${temperature}°C. What are the best practices for sustainable farming considering these weather conditions?`;
+
+            // Generate content based on the prompt
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = await response.text();
+
+            console.log(text);
+            const blogElements = document.getElementsByClassName("blog");
+        for (let i = 0; i < blogElements.length; i++) {
+            blogElements[i].innerText = text;
+        }
+        }
+
+        // Observe changes to the location element
+        const locationElement = document.getElementById("location");
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList') {
+                    const updatedLocation = locationElement.innerText.trim();
+                    console.log(`Updated location: ${updatedLocation}`);
+                    if (updatedLocation) {
+                        getAnswer(updatedLocation);
+                    }
+                }
+            });
+        });
+
+        // Configure the observer to look for childList changes
+        observer.observe(locationElement, { childList: true });
+
+        // Optionally, start with the current value if it exists
+        const initialLocation = locationElement.innerText.trim();
+        if (initialLocation) {
+            getAnswer(initialLocation);
+        }
+    </script>
 </body>
+
+
+
 </html>
