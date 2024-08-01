@@ -17,7 +17,7 @@ Our mission is to revolutionize farming practices and improve the livelihoods of
 **Live Data Retrieval: For better results, live data is extracted from sensors. Krishi-Tech utilizes three sensors: an NPK sensor, a soil moisture sensor, and a temperature sensor. All three sensors are deployed using an Arduino Nano. The microprocessor processes the analog signals received from the sensors and then, using a Bluetooth module or cloud service, sends this data to our Krishi-Tech interface. This data is then utilized by the ML models to make predictions regarding the crop, fertilizer, and necessary improvements in crop care.**
 
 ### Model(s) used for the Web App 🧮
-**The Models used for crop recommendation is convilutional neural network(CNN) and disease predection is support vector machine (SVM) , with the fertilizer recommendation we used the random forest algorithum** 
+**The Models used for crop recommendation is convolutional neural network(CNN) and disease predection is support vector machine (SVM) , with the fertilizer recommendation we used the random forest algorithum** 
 
 ### Video Demonstration 🎥
 
