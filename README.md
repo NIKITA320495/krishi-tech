@@ -13,9 +13,9 @@ Our app and dashboard are continuously updated to enhance performance and introd
 
 ### Video Demonstration 🎥
 
-https://github.com/NIKITA320495/krishi-tech/assets/115877450/9631d11b-4c12-44be-b9da-c689b1caf79f
+[Watch Video 1](https://github.com/NIKITA320495/krishi-tech/assets/115877450/9631d11b-4c12-44be-b9da-c689b1caf79f)
 
-pp.`
+[Watch Video 2](https://github.com/NIKITA320495/krishi-tech/blob/main/sensor/video-sensor.mp4)
 
 
 
