@@ -1,7 +1,7 @@
 ## Krishi-Tech
 
 **KrishiTech is an innovative startup and hackathon project developed by four passionate students: Piyush, Nikita, Manya, and Ritwick. We are currently pursuing our B.Tech degrees in Artificial Intelligence & Data Science from the University School of Automation & Robotics, Guru Gobind Singh Indraprastha University. <br>
-Our journey began with our participation in the BUILDWITHINDIA HACKATHON, where we embraced the theme of Smart Agriculture to create KrishiTech. Our mission is to revolutionize farming practices and improve the livelihoods of farmers by leveraging the power of technology.**
+Our mission is to revolutionize farming practices and improve the livelihoods of farmers by leveraging the power of technology.**
 
 ### Goal 🎯
 
