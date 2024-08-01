@@ -5,36 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/crop-pred.css">
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-    <title>crop prediction</title>
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <title>Crop Prediction</title>
 </head>
 <body>
-    <div id="popup-container" class="popup-container">
-        <div class="popup">
-            <a href="#" class="location"><i class="fa-solid fa-location-dot"></i></i></a>
-            <h2>Request Location</h2>
-            <p>Please allow us to use your device location.</p>
-            <div class="btn">
-            <button class="button special scrolly" id="allow-button">Allow</button>
-            <button class="button special scrolly" id="deny-button">Deny</button>
+    <div class ='container'>
+        <div id="popup-container" class="popup-container">
+            <div class="popup">
+                <a href="#" class="location"><i class="fa-solid fa-location-dot"></i></a>
+                <h2>Request Location</h2>
+                <p>Please allow us to use your device location.</p>
+                <div class="btn">
+                    <button class="button special scrolly" id="allow-button">Allow</button>
+                    <button class="button special scrolly" id="deny-button">Deny</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="weather-soil-data" class="soil-data" style="margin-top: -1%;">
-        <p id="temperature">Temperature: </p>
-        <p id="humidity">Humidity: </p>
-        <p id="rainfall">Rainfall: </p>
-        <p id="ph-value">pH value: </p>
-        <p id="nitrogen">Nitrogen: </p>
-        <p id="phosphorus">Phosphorus: </p>
-        <p id="potassium">Potassium: </p>
-        <p id="crop">Crop: </p>
+        <div id="weather-soil-data" class="soil-data">
+            <p id="temperature">Temperature: </p>
+            <p id="humidity">Humidity: </p>
+            <p id="rainfall">Rainfall: </p>
+            <p id="ph-value">pH value: </p>
+            <p id="nitrogen">Nitrogen: </p>
+            <p id="phosphorus">Phosphorus: </p>
+            <p id="potassium">Potassium: </p>
+            <p id="crop">Crop: </p>
+        </div>
+        <div class="content">
+            <p id="generated-content">Best Practices for the predicted crop</p>
+        </div>
     </div>
     <script src="../static/crop-pred.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        async function getAnswer(crop) {
+            const genAI = new GoogleGenerativeAI("AIzaSyBtd4jGDayYjdx0gGJYYwaFHFgdenCLQZg"); // Replace with your valid API key
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const prompt = `What are the best practices for growing ${crop}?Please provide the information in plain text without any lists or bullet points.`;
+            console.log(prompt);
+
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = await response.text();
+
+            console.log(text);
+            document.getElementById("generated-content").innerText = text;
+        }
+
+        function initializeAfterCropPrediction() {
+            const cropElement = document.getElementById("crop");
+            const crop = cropElement ? cropElement.textContent.trim() : null;
+
+            console.log('Crop element:', cropElement);
+            console.log('Retrieved crop name:', crop);
+
+            if (crop && crop !== 'Crop:') {
+                getAnswer(crop);
+                document.querySelector('.content').style.visibility = 'visible';
+                document.querySelector('.content').style.opacity = '1';
+            } else {
+                // Retry if crop is not yet available
+                setTimeout(initializeAfterCropPrediction, 1000);
+            }
+        }
+
+        // Ensure initialization after crop-pred.js execution
+        window.onload = initializeAfterCropPrediction;
+    </script>
 </body>
 </html>

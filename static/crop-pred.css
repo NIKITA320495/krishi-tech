@@ -1321,13 +1321,22 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     width: 50%;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     left: 50%;
-    top: 50%; /* Center vertically */
+    top: 20%; /* Center vertically */
     transform: translate(-50%, -50%);
-    z-index: 1000;
     visibility: hidden; /* Initially hidden */
-	
+}
+.content{
+	align-items: center;
+	text-align: center; /* Center text */
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color:#ffffff;
+	border-radius: 10px;
+	color: #000;
+	margin-top: 50%;
+	z-index: 1;
 }
 
 .location-container {

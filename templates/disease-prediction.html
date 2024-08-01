@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/disease.css">
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <title>Disease Prediction</title>
     <style>
         .prediction-result {
@@ -30,18 +30,43 @@
     <div class="disease-container">
         <div class="content">
             <h1>Disease Prediction</h1>
-                <div class="input">
-                    <label for="image">Upload Image</label>
-                    <input type="file" name="image" id="image" accept="image/*" required>
-                </div>
-                <button id="predict-button" type="button" class="button special scrolly">Predict</button>
-                <div id="prediction-result" class="prediction-result"></div>
+            <div class="input">
+                <label for="image">Upload Image</label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+            </div>
+            <button id="predict-button" type="button" class="button special scrolly">Predict</button>
+            <div id="prediction-result" class="prediction-result"></div>
             <br>
             <img id="image-preview" class="image-preview" src="" alt="Image Preview">
-            
         </div>
     </div>
-    <script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // Function to get best practices for curing a disease using Google Generative AI
+        async function getBestPractices(disease) {
+            const genAI = new GoogleGenerativeAI("AIzaSyBtd4jGDayYjdx0gGJYYwaFHFgdenCLQZg"); // Replace with your valid API key
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const prompt = `What are the best practices to cure plant disease ${disease}?`;
+            console.log(prompt);
+
+            // Generate content based on the prompt
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = await response.text();
+
+            console.log(text);
+            const resultDiv = document.getElementById('prediction-result');
+            resultDiv.textContent = `Best Practices: ${text}`;
+        }
+
         document.getElementById('image').addEventListener('change', function(event) {
             const file = event.target.files[0];
             const preview = document.getElementById('image-preview');
@@ -76,7 +101,9 @@
                 if (data.error) {
                     resultDiv.textContent = `Error: ${data.error}`;
                 } else {
-                    resultDiv.textContent = `Predicted Class: ${data.predicted_class}`;
+                    const disease = data.predicted_class; // Use the predicted class as disease name
+                    resultDiv.textContent = `Predicted Class: ${disease}`;
+                    getBestPractices(disease); // Fetch best practices for the predicted disease
                 }
             })
             .catch(error => {

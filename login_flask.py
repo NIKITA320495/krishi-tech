@@ -3,7 +3,6 @@ from flask_cors import CORS
 import sqlite3
 
 
-
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all origins
 @app.route('/')
